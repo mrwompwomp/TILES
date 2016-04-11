@@ -1,0 +1,79 @@
+real(0,1,1
+real(8,1,0
+Lbl A
+40->A
+real(0,3,4,0
+"->New/  Existing/  Help/  Quit
+real(6,0,40,40,31,47,0
+Repeat max(K={15,54,9
+	Repeat max(K={15,4,1,9,54
+		real(2,0,0->K
+	End
+	"->
+	real(6,0,40,A,0
+	A+8(K=1)-8(K=4
+	Ans-32(Ans=72)+32(Ans=32->A
+	"->
+	real(6,0,40,A,31
+End
+If K=15 or A=64
+Then
+	real(0,3,4,255,1
+	real(0,3,4,255
+	Return
+End
+If A=40 or A=48
+Then
+	real(0,3,4,0
+	"AppVar Name:
+	real(6,0,32,40,31
+	"--------
+	real(6,0,48,60,31
+	" ->Str1
+	While K!=105
+		Repeat Ans>34 and Ans<94 and min(Ans!={44,45}) or max(Ans={105,23
+			getKey->K
+		End
+		If K!=105 and K!=23 and 9>length(Str1
+		Str1+sub("ABC  DEFGHIJKLMNOPQRSTUVWXYZ",Ans-5int(.1Ans+4),1->Str1
+		real(6,0,40,52,31
+		If K=23 and 1<length(Str1
+		Then
+			sub(Str1,1,length(Str1)-1->Str1
+			real(7,9,40+8length(Str1),52,8,9,0
+		End
+	End
+	"rowSwap("+sub(Str1,2,length(Str1)-1->Str0
+	1:det(0
+	If A=48
+	Then
+		If Str9="..P:NT:FN
+		Then
+			"No such appvar!
+			real(6,0,23,80,31
+		End
+		sub(Str9,1,7
+		If Ans!="PolarLIBPIC" and Ans!="..P:NT:
+		Then
+			"Not a spritesheet!
+			real(6,0,10,80,31
+		End
+	End
+	If A=40 and sub(Str9,1,9)!="..P:NT:FN
+	Then
+		"Name Unavailable.
+		real(6,0,20,80,31
+	End
+End
+If 31=real(7,1,61,84
+Goto A
+real(0,3,4,0
+If A=48
+Then
+	sub(Str1,2,length(Str1)-1
+	real(7,7,10,15,138,74,255
+	real(5,0,0
+	For(B,0,15
+		real(4,0,15+8B,20,1,8,0,0,7,0,0,0+8B,1+8B,2+8B,3+8B,4+8B,5+8B,6+8B,7+8B
+	End
+	Pause 
