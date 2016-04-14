@@ -1,10 +1,15 @@
 real(0,1,1
 real(8,1,0
 Lbl A
-40->A
 real(0,3,4,0
+"CLOUD
+real(5,0,1
+For(A,0,96,8
+	real(4,0,35+A,1,1,6,0,0,31,0,0,0+A,1+A,2+A,3+A,4+A,5+A,6+A
+End
+50->A
 "->New/  Existing/  Help/  Quit
-real(6,0,40,40,31,47,0
+real(6,0,40,50,31,47
 Repeat max(K={15,54,9
 	Repeat max(K={15,4,1,9,54
 		real(2,0,0->K
@@ -12,40 +17,48 @@ Repeat max(K={15,54,9
 	"->
 	real(6,0,40,A,0
 	A+8(K=1)-8(K=4
-	Ans-32(Ans=72)+32(Ans=32->A
+	Ans-32(Ans=82)+32(Ans=42->A
 	"->
 	real(6,0,40,A,31
 End
-If K=15 or A=64
+If K=15 or A=74
+Goto Q
+If A=50 or A=58
 Then
-	real(0,3,4,255,1
-	real(0,3,4,255
-	Return
-End
-If A=40 or A=48
-Then
-	real(0,3,4,0
-	"AppVar Name:
-	real(6,0,32,40,31
-	"--------
-	real(6,0,48,60,31
+	DelVar Rreal(0,3,4,0
+	"A
+	real(6,0,151,2,31
+	"AppVar Name:///  --------
+	real(6,0,32,40,31,47
 	" ->Str1
-	While K!=105
-		Repeat Ans>34 and Ans<94 and min(Ans!={44,45}) or max(Ans={105,23
+	While K!=105 or 1=length(Str1
+		Repeat Ans>34 and Ans<94 and min(Ans!={44,45}) or max(Ans={105,23,31
 			getKey->K
 		End
-		If K!=105 and K!=23 and 9>length(Str1
-		Str1+sub("ABC  DEFGHIJKLMNOPQRSTUVWXYZ",Ans-5int(.1Ans+4),1->Str1
-		real(6,0,40,52,31
+		If K!=105 and K!=23 and K!=31 and 9>length(Str1
+		Then
+			If not(R
+			Str1+sub("ABC  DEFGHIJKLMNOPQRSTUVWXYZ",Ans-5int(.1Ans+4),1->Str1
+			If R and K>71 and K<102 and min(K!={75,81,85,91,95
+			Str1+sub("7894561230",K-22-7int(.1K),1->Str1
+		End
+		real(6,0,40,58,31
 		If K=23 and 1<length(Str1
 		Then
 			sub(Str1,1,length(Str1)-1->Str1
-			real(7,9,40+8length(Str1),52,8,9,0
+			real(7,9,40+8length(Str1),58,8,9,0
+		End
+		If K=31
+		Then
+			not(R->R
+			real(7,9,150,1,10,10,0
+			sub("A1",R+1,1
+			real(6,0,151,2,31
 		End
 	End
 	"rowSwap("+sub(Str1,2,length(Str1)-1->Str0
 	1:det(0
-	If A=48
+	If A=58
 	Then
 		If Str9="..P:NT:FN
 		Then
@@ -61,7 +74,7 @@ Then
 			Pause 
 		End
 	End
-	If A=40 and sub(Str9,1,9)!="..P:NT:FN
+	If A=50 and sub(Str9,1,9)!="..P:NT:FN
 	Then
 		"Name Unavailable.
 		real(6,0,20,80,31
@@ -72,9 +85,9 @@ If real(7,1,61,84
 Goto A
 real(0,3,4,0
 real(7,7,11,15,138,74,255
-If A=48
+If A=58
 Then
-	sub(Str1,2,length(Str1)-1->Str0
+	sub(Str1,2,length(Str1)-1
 	real(5,0,0
 	For(B,0,120,8
 		real(4,0,16+B,20,1,8,0,0,7,0,0,0+B,1+B,2+B,3+B,4+B,5+B,6+B,7+B
@@ -82,8 +95,9 @@ Then
 	real(7,9,16,20,128,64,31
 End
 real(7,7,1,93,158,25,255
-1->C:16->A:20->B:1->D:224->E:1->F
+3->C:16->A:20->B:1->D:224->E:1->F
 Lbl C
+real(7,9,2,94,156,23,0
 "MODE For Menu
 real(6,0,28,101,255
 Repeat K=22
@@ -99,19 +113,75 @@ Repeat K=22
 End
 Lbl D
 real(7,9,2,94,156,23,0
-real(7,3,8,105,E,8
-real(7,7,7F,104,10,10,255
-sub("Color  Pt-Size",F-(7F>9),7
-real(6,0,6,95,255
-"+  -
-real(6,0,20,105,255
-real(6,1,32,105,255,C
-Repeat max(K={21,105
+real(7,3,144,105,224,8
+"x
+real(6,0,144,105,255
+real(7,3,14,105,E,8
+real(7,7,13F,104,10,10,255
+"+
+real(6,0,27,105,255
+real(7,5,54,108,59,108,255
+real(6,1,39,105,255,C
+Repeat (F=5 or F=11) and (K=21 or K=105
 	Repeat max(K={21,105,24,26
 		getKey->K
-		F+(K=26)-(K=24->F
 	End
-	real(7,7,7F,104,10,10,0
-	
-End
-Pause 
+	real(7,7,13F,104,10,10,0
+	F+(K=26)-(K=24
+	Ans+not(Ans)-(Ans=12)+(Ans=3)((K=26)-(K=24->F
+	real(7,7,13F,104,10,10,255
+	If (F=2 or F=4) and K=21 or K=105
+	Then
+		real(7,3,39,105,0,8
+		C+(F=2)-(F=4
+		Ans-9(Ans=10)+9(Ans=0->C
+		real(6,1,39,105,255,C
+	End
+	If F=1 and (K=21 or K=105
+	Then
+		0->C
+		real(8,1,1
+		real(8,2,0
+		real(0,3,4,0
+		For(B,3,38,5
+			For(A,0,155,5
+				real(7,9,A,B,5,5,C
+				C+1->C
+		End:End
+		5remainder(E,32)+2->A
+		5(1+int(E/32->B
+		real(7,6,0,B,160,B
+		real(7,6,A,0,A,42
+		real(6,1,90,80,255,E
+		Repeat max(K={105,21
+			Repeat max(K={105,21,24,25,26,34
+				getKey->K
+			End
+			If max(K={24,26,25,34
+			Then
+				If max(K={24,26
+				Then
+					real(7,6,A,0,A,42
+					A-5((K=24)-(K=26
+					Ans+160(Ans=~3)-160(Ans=162->A
+					real(7,6,A,0,A,42
+					Else
+					real(7,6,0,B,160,B
+					B-5((K=25)-(K=34
+					Ans+40(Ans=0)-40(Ans=42->B
+					real(7,6,0,B,160,B
+				End
+				real(7,1,A,B->E
+				real(7,9,90,80,24,9,0
+				real(6,1,90,80,255,E
+			End
+		End
+		Pause 
+		
+End:End
+If F=5
+Goto C
+Lbl Q
+real(0,3,4,255,1
+real(0,3,4,255
+Return
