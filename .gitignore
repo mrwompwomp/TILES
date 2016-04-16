@@ -146,19 +146,18 @@ Repeat (F=5 or F=11 or F=6 or F=7) and (K=21 or K=105
 	End
 	real(7,7,13F,104,10,10,0
 	F+(K=26)-(K=24
-	Ans+not(Ans)-(Ans=12)+(Ans=3)((K=26)-(K=24->F
+	Ans+11not(Ans)-11(Ans=12)+(Ans=3)((K=26)-(K=24->F
 	real(7,7,13F,104,10,10,255
 	If (F=2 or F=4) and K=21 or K=105
 	Then
 		real(7,3,39,105,0,8
-		C+(F=2)-(F=4
-		Ans-9(Ans=10)+9(Ans=0->C
+		remainder(C+(F=2)-(F=4),9
+		Ans+9not(Ans->C
 		real(6,1,39,105,255,C
 	End
 	If F=1 and (K=21 or K=105
 	Then
-		0->G
-		real(8,1,1
+		DelVar Greal(8,1,1
 		real(8,2,0
 		real(0,3,4,0
 		For(K,3,38,5
@@ -166,11 +165,12 @@ Repeat (F=5 or F=11 or F=6 or F=7) and (K=21 or K=105
 				real(7,9,R,K,5,5,G
 				G+1->G
 		End:End
-		5remainder(E,32)+2->R
+		2+5remainder(E,32->R
 		5+5int(E/32->H
 		real(7,6,0,H,160,H
 		real(7,6,R,3,R,42
 		real(6,1,90,80,255,E
+		real(7,9,20,70,30,30,E
 		Repeat max(K={105,21
 			Repeat max(K={105,21,24,25,26,34
 				getKey->K
@@ -179,19 +179,20 @@ Repeat (F=5 or F=11 or F=6 or F=7) and (K=21 or K=105
 			Then
 				If max(K={24,26
 				Then
-					real(7,6,R,3,R,42
+					real(7,6,R,3,R,42,0
 					R-5((K=24)-(K=26
 					Ans+160(Ans=~3)-160(Ans=162->R
-					real(7,6,R,3,R,42
+					real(7,6,R,3,R,42,0
 					Else
-					real(7,6,0,H,160,H
-					H-5((K=25)-(K=34
-					Ans+40(Ans=0)-40(Ans=42->H
-					real(7,6,0,H,160,H
+					real(7,6,0,H,160,H,0
+					remainder(H-5((K=25)-(K=34)),40
+					Ans+40not(Ans->H
+					real(7,6,0,H,160,H,0
 				End
 				real(7,1,R,H->E
 				real(7,9,90,80,24,9,0
 				real(6,1,90,80,255,E
+				real(7,9,20,70,30,30,E
 			End
 		End
 		real(8,1,0
