@@ -5,7 +5,7 @@ real(0,3,4,0
 "TILESPRT
 real(5,0,0
 For(A,0,96,8
-	real(4,0,35+A,1,1,6,0,0,31,0,0,0+A,1+A,2+A,3+A,4+A,5+A,6+A
+	real(4,0,35+A,1,1,6,0,0,31,0,0,A,1+A,2+A,3+A,4+A,5+A,6+A
 End
 50->A
 "->New/  Existing/  Help/  Quit
@@ -91,7 +91,7 @@ Then
 	sub(Str1,2,length(Str1)-1
 	real(5,0,0
 	For(B,0,120,8
-		real(4,0,16+B,20,1,8,0,0,7,0,0,0+B,1+B,2+B,3+B,4+B,5+B,6+B,7+B
+		real(4,0,16+B,20,1,8,0,0,7,0,0,B,1+B,2+B,3+B,4+B,5+B,6+B,7+B
 	End
 End
 "TILESPRT
