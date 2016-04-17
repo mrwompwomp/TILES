@@ -1,3 +1,5 @@
+:DCS
+"BBBBD7666DCBBBBBBBDD7776D6DDBBBBCDDD676666D9DBBBDDDDDDDDDD999BBBEDDDDDEEEDE9EBBBDEEEEDEBEDDDEBD7BBBCEDDDDDEEBE7EBBBEDDDDDEEBE7EBBBBEDDDDEEB77FBBBBBDEEEEBB777CBBBBBBBBBBD777DBBBBBBBBBBCE77DBBBBBBBBBBCDBEDBBBBBBBBBBCECECBBBBBBBBBBCE6EDCBBBBBBBBBCC9FDCCCCCBBB
 real(0,1,1
 real(8,1,0
 Lbl A
@@ -97,15 +99,15 @@ End
 "TILESPRT
 real(5,0,0
 real(7,7,1,93,158,25,255
-3->C:16->A:20->B:224->E:1->F:0->O:0->P
+3->C:16->A:20->B:224->E:1->F:0->O:0->P:0->G
 Lbl C
 real(7,9,2,94,156,23,0
 "thetaMODE] For Menu
 real(6,0,20,101,255
 Repeat K=22
-	real(7,4,A,B,C,0
+	real(7,4,A,B,C-G,0
 	getKey->K
-	real(7,4,A,B,C,0
+	real(7,4,A,B,C-G,0
 	A+(K=26)-(K=24
 	Ans+(129-C)(Ans=15)-(129-C)(Ans=145-C->A
 	B+(K=34)-(K=25
@@ -128,7 +130,7 @@ Repeat K=22
 		End
 	End
 End
-real(7,9,2,94,156,23,0
+DelVar Greal(7,9,2,94,156,23,0
 real(7,3,144,105,224,8
 "x
 real(6,0,144,105,255
@@ -157,7 +159,7 @@ Repeat (F=5 or F=11 or F=6 or F=7) and (K=21 or K=105
 	End
 	If F=1 and (K=21 or K=105
 	Then
-		DelVar Greal(8,1,1
+		real(8,1,1
 		real(8,2,0
 		real(0,3,4,0
 		For(K,3,38,5
@@ -165,7 +167,7 @@ Repeat (F=5 or F=11 or F=6 or F=7) and (K=21 or K=105
 				real(7,9,R,K,5,5,G
 				G+1->G
 		End:End
-		2+5remainder(E,32->R
+		DelVar G2+5remainder(E,32->R
 		5+5int(E/32->H
 		real(7,6,0,H,160,H
 		real(7,6,R,3,R,42
@@ -200,7 +202,9 @@ Repeat (F=5 or F=11 or F=6 or F=7) and (K=21 or K=105
 		real(7,3,14,105,E,8
 	End
 End
-If F=5 or F=6 or F=7
+If F>5
+C-1->G
+If F<8
 Goto C
 Lbl Q
 real(0,3,4,255,1
