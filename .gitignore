@@ -3,25 +3,23 @@
 real(0,1,1
 real(8,1,0
 Lbl A
-real(0,3,4,0
-"TILESPRT
+real(0,3,4,8
+"TILESPR
 real(5,0,0
-For(A,0,96,8
-	real(4,0,35+A,1,1,6,0,0,31,0,0,A,1+A,2+A,3+A,4+A,5+A
-End
+real(4,8,35,1,12,6,0,0,31,0,0,0
 50->A
 "->New/  Existing/  Help/  Quit
-real(6,0,40,50,31,47
+real(6,0,40,50,78,47
 Repeat max(K={15,54,9
 	Repeat max(K={15,4,1,9,54
 		real(2,0,0->K
 	End
 	"->
-	real(6,0,40,A,0
+	real(6,0,40,A,8
 	A+8(K=1)-8(K=4
 	Ans-32(Ans=82)+32(Ans=42->A
 	"->
-	real(6,0,40,A,31
+	real(6,0,40,A,78
 End
 If K=15 or A=74
 Goto Q
@@ -92,14 +90,13 @@ If A=58
 Then
 	sub(Str1,2,length(Str1)-1
 	real(5,0,0
-	For(B,0,120,8
-		real(4,0,16+B,20,1,8,0,0,7,0,0,B,1+B,2+B,3+B,4+B,5+B,6+B,7+B
-	End
+	real(4,8,16,20,16,8,0,0,7,0,0,0
 End
-"TILESPRT
+"Color     Pt-Size   Return    Rectangle FRectangleLine      EyedropperExport    Quit      ->Str1
+"TILESPR
 real(5,0,0
 real(7,7,1,93,158,25,255
-3->C:16->A:20->B:224->E:1->F:0->O:0->P:0->G
+DelVar ODelVar PDelVar G3->C:16->A:20->B:224->E:1->F
 Lbl C
 real(7,9,2,94,156,23,0
 "thetaMODE] For Menu
@@ -116,46 +113,64 @@ Repeat K=22
 	real(7,3,A,B,E,C
 	If O and max(F={6,7
 	Then
-		real(7,8,O,P,A-O,B-P,0
-		real(7,8,O,P,A-O,B-P,0
+		A+(A=O+1->A:B+(B=P+1->B
+		real(7,8+2(F=7),O,P,A-O,B-P,0
+		real(7,8+2(F=7),O,P,A-O,B-P,0
 	End
-	If K=21 and (F=6 or F=7
+	If O and F=8
+	Then
+		real(7,6,O,P,A,B
+		real(7,6,O,P,A,B
+	End
+	If K=21 and (F=6 or F=7 or F=8
 	Then
 		If not(O
 		Then
-			A->O:B->P
+			A->O:B->P:A+3->A:B+3->B
 			Else
-			real(7,7,O,P,A-O,B-P,E,0
+			If F!=8
+			real(7,7+2(F=7),O,P,A-O,B-P,E,0
+			If F=8
+			real(7,5,O,P,A,B,E,0
 			DelVar ODelVar P
 		End
 	End
 End
 DelVar Greal(7,9,2,94,156,23,0
-real(7,3,144,105,224,8
-"x
-real(6,0,144,105,255
-real(7,3,14,105,E,8
-real(7,7,13F,104,10,10,255
+real(7,3,12,105,E,8
+real(7,7,13F-2,104,10,10,255
 "+
-real(6,0,27,105,255
-real(7,7,80,106,6,6,255
-real(4,0,131,105,1,1,0,0,7,0,0,7
-real(7,5,54,108,59,108,255
-real(6,1,39,105,255,C
-Repeat (F=5 or F=11 or F=6 or F=7) and (K=21 or K=105
+real(6,0,25,105,255
+sub(Str1,10(F-1-2(F>2))+1,10
+real(6,0,10,96,255
+For(K,0,1
+	real(4,0,102-52K,105,6,1,0,0,31,0,0,87-K,95-K,103-K,111-K,119-K,127-K
+End
+real(6,1,37,105,255,C
+Repeat (F=5 or F=11 or F=6 or F=7 or F=8) and (K=21 or K=105
 	Repeat max(K={21,105,24,26
 		getKey->K
 	End
-	real(7,7,13F,104,10,10,0
-	F+(K=26)-(K=24
-	Ans+11not(Ans)-11(Ans=12)+(Ans=3)((K=26)-(K=24->F
-	real(7,7,13F,104,10,10,255
+	If K=26 or K=24
+	Then
+		real(7,7,13F-2,104,10,10,0
+		F+(K=26)-(K=24
+		Ans+11not(Ans)-11(Ans=12)+(Ans=3)((K=26)-(K=24->F
+		real(7,7,13F-2,104,10,10,255
+		real(7,9,10,95,80,9,0
+		sub(Str1,10(F-1-2(F>2))+1,10
+		real(6,0,10,96,255
+		If F=2 or F=4
+		real(7,3,72,99-iPart((C-1)/2),255,C
+	End
 	If (F=2 or F=4) and K=21 or K=105
 	Then
-		real(7,3,39,105,0,8
+		real(7,3,37,105,0,8
+		real(7,3,72,95,0,9
 		remainder(C+(F=2)-(F=4),9
 		Ans+9not(Ans->C
-		real(6,1,39,105,255,C
+		real(7,3,72,99-iPart((C-1)/2),255,C
+		real(6,1,37,105,255,C
 	End
 	If F=1 and (K=21 or K=105
 	Then
@@ -199,12 +214,12 @@ Repeat (F=5 or F=11 or F=6 or F=7) and (K=21 or K=105
 		End
 		real(8,1,0
 		real(8,2,0
-		real(7,3,14,105,E,8
+		real(7,3,12,105,E,8
 	End
 End
 If F>5
 C-1->G
-If F<8
+If F<9
 Goto C
 Lbl Q
 real(0,3,4,255,1
