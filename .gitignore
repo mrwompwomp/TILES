@@ -1,11 +1,23 @@
 :DCS
 "BBBBD7666DCBBBBBBBDD7776D6DDBBBBCDDD676666D9DBBBDDDDDDDDDD999BBBEDDDDDEEEDE9EBBBDEEEEDEBEDDDEBD7BBBCEDDDDDEEBE7EBBBEDDDDDEEBE7EBBBBEDDDDEEB77FBBBBBDEEEEBB777CBBBBBBBBBBD777DBBBBBBBBBBCE77DBBBBBBBBBBCDBEDBBBBBBBBBBCECECBBBBBBBBBBCE6EDCBBBBBBBBBCC9FDCCCCCBBB
+If 80>det([[20
+Then
+	Disp "Get Doors To Run This.","http://dcs:cemetech.net
+Return:End
+"rowSwap(TILESPR->Str0
+det(8
+If Str9="..P:NT:FN
+Then
+	Disp "Send Appvar TILESPRT to","your calculator's
+	Pause "Archive Memory.
+	Return
+End
 real(0,1,1
 real(8,1,0
-Lbl A
-real(0,3,4,8
 "TILESPR
 real(5,0,0
+Lbl A
+real(0,3,4,8
 real(4,8,35,1,12,6,0,0,31,0,0,0
 50->A
 "->New/  Existing/  Help/  Quit
@@ -57,7 +69,7 @@ Then
 		End
 	End
 	"rowSwap("+sub(Str1,2,length(Str1)-1->Str0
-	1:det(0
+	det(8
 	If A=58
 	Then
 		If Str9="..P:NT:FN
@@ -66,8 +78,8 @@ Then
 			real(6,0,23,80,31
 			Pause 
 		End
-		sub(Str9,1,7
-		If Ans!="PolarLIBPIC" and Ans!="..P:NT:
+		sub(Str9,5,5
+		If Ans!="08199" and Ans!="NT:FN
 		Then
 			"Not a spritesheet!
 			real(6,0,10,80,31
@@ -76,10 +88,20 @@ Then
 	End
 	If A=50 and sub(Str9,1,9)!="..P:NT:FN
 	Then
-		"Name Unavailable.
+		"Name Unavailable
 		real(6,0,20,80,31
 		Pause 
 	End
+End
+If A=66
+Then
+	real(0,3,4,8
+	"TILES HELP
+	real(6,0,40,2,255
+	"THIS PROGRAM ALLOWS/THE USER TO CREATE/OR EDIT SPRITESHEETS/ON-CALC./1) NAME OF APPVAR/MUST BE VALID/2) EXPORTING TAKES/FOREVER/3) COMPATIBLE WITH/Ti-84+CSE,Ti-84+CE/CREDS TO/PETER (PT ) TILLEMA/FOR THE ASM ROUTINES
+	real(6,0,1,12,255,47
+	real(7,5,74,106,80,106,255
+	Pause 
 End
 If real(7,1,61,84
 Goto A
@@ -100,15 +122,16 @@ DelVar ODelVar PDelVar G3->C:16->A:20->B:224->E:1->F
 Lbl C
 real(7,9,2,94,156,23,0
 "thetaMODE] For Menu
+If F!=9
 real(6,0,20,101,255
 Repeat K=22
 	real(7,4,A,B,C-G,0
 	getKey->K
 	real(7,4,A,B,C-G,0
 	A+(K=26)-(K=24
-	Ans+(129-C)(Ans=15)-(129-C)(Ans=145-C->A
+	Ans+(129-C+G)(Ans=15)-(129-C+G)(Ans=145-C+G->A
 	B+(K=34)-(K=25
-	Ans+(65-C)(Ans=19)-(65-C)(Ans=85-C->B
+	Ans+(65-C+G)(Ans=19)-(65-C+G)(Ans=85-C+G->B
 	If K=21 and F<6
 	real(7,3,A,B,E,C
 	If O and max(F={6,7
@@ -122,11 +145,11 @@ Repeat K=22
 		real(7,6,O,P,A,B
 		real(7,6,O,P,A,B
 	End
-	If K=21 and (F=6 or F=7 or F=8
+	If K=21 and (O or (A<142 and B<82)) and (F=6 or F=7 or F=8
 	Then
 		If not(O
 		Then
-			A->O:B->P:A+3->A:B+3->B
+			A->O:B->P:A+2->A:B+2->B
 			Else
 			If F!=8
 			real(7,7+2(F=7),O,P,A-O,B-P,E,0
@@ -134,6 +157,17 @@ Repeat K=22
 			real(7,5,O,P,A,B,E,0
 			DelVar ODelVar P
 		End
+	End
+	If F=9
+	Then
+		real(7,8,A-1,B-1,3,3
+		real(7,8,A-1,B-1,3,3
+		real(7,1,A,B->V
+		real(7,9,60,98,15,15,V
+		real(7,9,80,100,30,10,0
+		real(6,1,80,100,255,V
+		If K=21 or K=105
+		V->E
 	End
 End
 DelVar Greal(7,9,2,94,156,23,0
@@ -147,7 +181,7 @@ For(K,0,1
 	real(4,0,102-52K,105,6,1,0,0,31,0,0,87-K,95-K,103-K,111-K,119-K,127-K
 End
 real(6,1,37,105,255,C
-Repeat (F=5 or F=11 or F=6 or F=7 or F=8) and (K=21 or K=105
+Repeat (F=5 or F=11 or F=6 or F=7 or F=8 or F=9) and (K=21 or K=105
 	Repeat max(K={21,105,24,26
 		getKey->K
 	End
@@ -219,7 +253,7 @@ Repeat (F=5 or F=11 or F=6 or F=7 or F=8) and (K=21 or K=105
 End
 If F>5
 C-1->G
-If F<9
+If F<10
 Goto C
 Lbl Q
 real(0,3,4,255,1
