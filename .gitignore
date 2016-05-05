@@ -52,14 +52,14 @@ Then
 	real(6,0,32,40,31,47
 	" ->Str1
 	While K!=105 or 1=length(Str1
-		Repeat Ans>34 and Ans<94 and Ans!=44 and Ans!=45 or max(Ans={105,23,31
+		Repeat Ans>34 and Ans<94 and Ans!=44 and Ans!=45 or max(Ans={105,23,31,102
 			getKey->K
 		End
 		If K!=105 and K!=23 and K!=31 and 9>length(Str1
 		Then
 			If not(R
 			Str1+sub("ABC  DEFGHIJKLMNOPQRSTUVWXYZ",Ans-5int(.1Ans+4),1->Str1
-			If R and K>71 and K<102 and min(K!={75,81,85,91,95
+			If R and K>71 and K<103 and min(K!={75,81,85,91,95
 			Str1+sub("7894561230",K-22-7int(.1K),1->Str1
 		End
 		real(6,0,40,58,31
@@ -106,9 +106,8 @@ Then
 	real(0,3,4,8
 	"TILES HELP
 	real(6,0,40,2,255
-	"THIS PROGRAM ALLOWS/THE USER TO CREATE/OR EDIT SPRITESHEETS/ON-CALC./1) NAME OF APPVAR/MUST BE VALID/2) EXPORTING TAKES/FOREVER/3) COMPATIBLE WITH/Ti-84+CSE,Ti-84+CE/CREDS TO/PETER (PT ) TILLEMA/FOR THE ASM ROUTINES
+	"THIS PROGRAM ALLOWS/THE USER TO CREATE/OR EDIT SPRITESHEETS/ON-CALC./1) NAME OF APPVAR/MUST BE VALID/2) EXPORTING TAKES/FOREVER/3) COMPATIBLE WITH/Ti-84+CSE,Ti-84+CE/CREDS TO/PETER (PT_) TILLEMA/FOR THE ASM ROUTINES
 	real(6,0,1,12,255,47
-	real(7,5,74,106,80,106,255
 	Pause 
 End
 If real(7,1,61,84
@@ -119,13 +118,13 @@ real(7,9,16,20,128,64,7
 If A=73
 Then
 	sub(Str1,2,length(Str1)-1
-	real(5,0,0
-	real(4,8,16,20,16,8,0,0,7,0,0,0
+	real(5,0,1
+	real(4,8,16,20,16,8,0,0,7,0,0,128
 End
 "Color     Pt-Size   Return    Rectangle FRectangleLine      EyedropperExport    Quit      ->Str1
-"TILESPRT
-real(5,0,0
 real(7,7,1,93,158,25,255
+"Tiles
+real(6,0,60,3,255
 DelVar ODelVar PDelVar G3->C:16->A:20->B:224->E:1->F
 Lbl C
 real(7,9,2,94,156,23,0
@@ -142,18 +141,18 @@ Repeat K=22
 	Ans+(65-C+G)((Ans=19)-(Ans=85-C+G->B
 	If K=21 and F<6
 	real(7,3,A,B,E,C
-	If O and max(F={6,7
+	If O and max(F={6,7,8
 	Then
-		A+(A=O+1->A:B+(B=P+1->B
-		real(7,8+2(F=7),O,P,A-O,B-P
-		real(7,8+2(F=7),O,P,A-O,B-P
-	End
-	If O and F=8
-	Then
-		real(7,6,O,P,A,B
-		real(7,6,O,P,A,B
-	End
-	If K=21 and (O or (A<142 and B<82)) and (F=6 or F=7 or F=8
+		If F=8
+		Then
+			real(7,6,O,P,A,B
+			real(7,6,O,P,A,B
+			Else
+			A+(A=O+1->A:B+(B=P+1->B
+			real(7,8+2(F=7),O,P,A-O,B-P
+			real(7,8+2(F=7),O,P,A-O,B-P
+	End:End
+	If K=21 and (O or (A<142 and B<82)) and max(F={6,7,8
 	Then
 		If not(O
 		Then
@@ -216,33 +215,36 @@ Repeat F>4 and (K=21 or K=105
 	Then
 		real(8,1,1
 		real(8,2,0
-		real(0,3,4,0
-		For(K,0,35,5
-			For(R,0,155,5
-				real(7,9,R,K,5,5,G
-				G+1->G
-		End:End
-		DelVar G2+5remainder(E,32->R
-		2+5int(E/32->H
-		real(7,6,0,H,160,H
-		real(7,6,R,0,R,39
-		real(6,1,90,80,255,E
-		real(7,9,20,70,30,30,E
+		If 33!=real(7,1,9,5
+		Then
+			real(0,3,4,0
+			For(K,0,35,5
+				For([recursiven],0,155,5
+					real(7,9,[recursiven],K,5,5,G
+					G+1->G
+			End:End
+			DelVar G2+5remainder(E,32->R
+			2+5int(E/32->H
+			real(7,6,0,H,160,H
+			real(7,6,R,0,R,39
+			real(6,1,90,80,255,E
+			real(7,9,20,70,30,30,E
+		End
 		Repeat max(K={105,21
 			Repeat max(K={105,21,24,25,26,34
 				getKey->K
 			End
-			If max(K={24,26,25,34
+			If K=34 or 2>abs(K-25
 			Then
 				If max(K={24,26
 				Then
-					real(7,6,R,0,R,39,0
+					real(7,6,R,0,R,39
 					remainder(R+35+5K,160->R
-					real(7,6,R,0,R,39,0
+					real(7,6,R,0,R,39
 					Else
-					real(7,6,0,H,160,H,0
+					real(7,6,0,H,160,H
 					remainder(H+40-5((K=25)-(K=34)),40->H
-					real(7,6,0,H,160,H,0
+					real(7,6,0,H,160,H
 				End
 				real(7,1,R,H->E
 				real(7,9,90,80,24,9,0
