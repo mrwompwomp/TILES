@@ -112,6 +112,7 @@ Then
 End
 If real(7,1,61,84
 Goto A
+Str0:Asm(prgmTEMPX001
 real(0,3,4,0
 real(7,7,11,15,138,74,255
 real(7,9,16,20,128,64,7
