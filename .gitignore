@@ -263,6 +263,7 @@ If F<10
 Goto C
 If F=10
 Then
+THIS IS WHERE YOUR CODE GOES PT_ :D
 End
 Lbl Q
 real(0,3,4,255,1
