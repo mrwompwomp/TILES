@@ -189,7 +189,7 @@ real(4,8,50,105,13,1,0,0,31,0,0,85
 real(7,7,13F-2,104,10,10,255
 real(6,1,37,105,255,C
 Repeat F>4 and (K=21 or K=105
-	Repeat max(K={21,105,24,26
+	Repeat max(K=timeCnv(9149066
 		getKey->K
 	End
 	If K=26 or K=24
